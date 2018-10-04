@@ -1,0 +1,132 @@
+[Title Про криволінійні інтеграли]
+[SetMainPage Титульна сторінка]
+[Page Титульна сторінка]
+  [Picture 1]<Set Picture='imageM1.bmp' Align=Client>;
+  [SetX] 0;
+  [SetY] 0;
+  [SetStepX] 0;
+  [SetStepY] 100;
+  [newline];
+  [SetStepY] 5;
+  [SetX] 100;
+  [Button1]<caption>Криво</caption><font name='Monotype Corsiva' size=28
+    color=150,230,255><set Transparent=yes>;
+  [Button2]<caption>лінійні</caption>
+    <font name='Times New Roman' size=28 color=150,230,255>
+    <Set Transparent=yes>;
+  [Button3]<caption> інтеграли</caption>
+    <font name='Times New Roman' size=28 style=italic color=150,230,255>
+    <Set Transparent=yes>;
+  [NewLine];
+  [SetX] 170;
+  [Label1]<caption>Підручник з тестами</caption>
+    <font name='Times New Roman' size=14><Set Transparent=yes>;
+  [NewLine];
+  [SetX] 200;
+  [ButtonGo]<Caption>Старт</Caption><Font name='Times New Roman'
+    size=14 color=0,255,0><Set Transparent=yes>;
+  [DoOnButtonsPress1]<ButtonGo ShowPage='Сторінка 1'>;
+[Page Сторінка 1]
+  [Color] 255,255,255;
+  [SetStepY] 0;
+  [SetStepX] 0;
+  [RichEdit1]<Font name='Times New Roman' size=12>
+    <Set AutoSize=yes Color=255,255,255>
+    <Caption>
+    '<p Align=Center><Font Size=18 Color=255,0,0><b>Криволінійний 
+інтеграл&br&по довжині дуги</b></Font></p>
+<p Tab=30>	Нехай функція <i>f(x,y)</i> визначена і неперервна 
+в усіх точках дуги AB <u>гладкої</u>&br&кривої <i>l</i>, яка має рівняння 
+y=<Font name='Symbol'>j</Font>(x), a<Font name='Symbol'>Ј</Font>
+x<Font name='Symbol'>Ј</Font>b.</p>
+'</Caption>;
+  [NewLine];
+  [Picture1]<Set Picture='Kryvoline1.bmp' Transparent=yes>;
+  [NewLine];
+  [RichEdit2]<Font Name='Times New Roman' size=12>
+    <Set AutoSize=yes Color=255,255,255>
+    <Caption>
+    '<p Tab='30'>	Крива називається <u><b>гладкою</b></u>, якщо в  кожній її точці 
+можна провести&br&дотичну пряму до цієї кривої.</p>
+<p Align=Center><Font size=14 color=255,100,100>Виведення</Font></p>
+<p Tab='30'>	Розіб'ємо дугу AB довільним способом на <i>n</i> елементарних дуг з 
+точками&br&<i>A=A0, A1, A2, A3, ..., An=B</i>.</p>
+<p Tab=30>	Довжину дуги <i>Ak-1Ak</i> позначимо <i>Ak-1Ak=</i>
+<Font Name='Symbol'>D</Font><i>Sk</i>. На кожній елементарній&br&дузі 
+виберемо точку <i>Mk(xk,yk)</i> і помножимо значення функції&br&
+<i>f(xk,yk)</i> в цій точці на довжину <Font Name='Symbol'>D</Font>
+<i>Sk</i> відповідної дуги.</p>
+<p Tab=30>	Сума вигляду</p>'
+    </Caption>;
+  [NewLine];
+  [Picture2]<Set Picture='Formula1.bmp' Transparent=yes>;
+  [NewLine];
+  [RichEdit3]<Font Name='Times New Roman' size=12>
+    <Set AutoSize=yes Color=255,255,255>
+    <Caption>
+    'називається <b>інтегральною сумою для функції <i>f(x,y)</i> по&br&
+довжині дуги AB.</b>
+<p Tab=30><Font size=14 color=0,255,0><b>	Криволінійним інтегралом по 
+довжині дуги AB&br&від функції <i>f(x,y)</i></b></Font> називається границя 
+інтегральної суми за умови,&br&що <i>max</i><Font name='Symbol'>D</Font>
+<i>Sk</i><Font Name='Symbol'>®</Font><i>0:</i></p>'
+    </Caption>;
+  [NewLine];
+  [Picture3]<Set Picture='Formula2.bmp' Transparent=yes>;
+  [NewLine];
+  [RichEdit4]<Font Name='Times New Roman' size=12>
+    <Set AutoSize=yes Color=255,255,255>
+    <Caption>
+    'це <Font Color=0,255,0><b>криволінійний інтеграл першого 
+роду.</b></Font>'
+    </Caption>;
+  [NewLine];
+  [Button1]<Caption>Перевір себе-&gt&</Caption><Font Name='Times New Roman'
+    size=12 style=bold color=0,0,255>;
+  [DoOnButtonsPress1]<Button1 ShowPage='Запитання'>;
+[Page Запитання]
+  [Label1]<Caption>Оберіть правильні твердження:</Caption>
+    <Font Name='Times New Roman' size=12>;[NewLine];
+  [CheckBox1]<Caption>Криволінійний інтеграл - це границя інтегральної 
+суми</Caption>;[NewLine];
+  [CheckBox2]<Caption>Гладка крива - це жирна лінія змінної 
+товщини</Caption>;[NewLine];
+  [CheckBox3]<Caption>Гладка крива - це крива без зламів і 
+розривів</Caption>;[NewLine];
+  [CheckBox4]<Caption>Дельта Sk - це відрізок кривої</Caption>;[NewLine];
+  [CheckBox5]<Caption>До гладкої кривої можна провести дотичну пряму 
+де завгодно</Caption>;[NewLine];
+  [DoOnButtonsPress1]<group><CheckBox1 Answer=true DisableThis=yes
+    DisableRest=yes>
+    <CheckBox2 Answer=false DisableThis=yes>
+    <CheckBox3 Answer=true DisableThis=yes DisableRest=yes>
+    <CheckBox4 Answer=true DisableThis=yes DisableRest=yes>
+    <CheckBox5 Answer=true DisableThis=yes DisableRest=yes></group>;
+[Page Оцінка]
+  [SetStepX] 0;
+  [SetStepY] 0;
+  [Label1_1]<Caption>За 12-бальною системою:</Caption>
+    <Font Name='MS Sans Serif' Color=0,0,255><Set Transparent=yes>;
+  [NewLine];
+  [Label1]<Font Name='Times New Roman' size=28 Color=255,0,0>
+    <Set Transparent=yes>;
+  [NewLine];
+  [Label2_2]<Caption>За 5-бальною системою:</Caption>
+    <Font Name='MS Sans Serif' Color=0,0,255><Set Transparent=yes>;
+  [NewLine];
+  [Label2]<Font Name='Times New Roman' size=28 color=255,0,0>
+    <Set Transparent=yes>;
+  [NewLine];
+  [Label3_3]<Caption>Правильних відповідей=</Caption>
+    <Font Name='MS Sans Serif' Color=0,130,0><Set Transparent=yes>;
+  [Label3]<Font Name='MS Sans Serif' Color=0,130,0><Set Transparent=yes>;
+  [NewLine];
+  [Label4_4]<Caption>Неправильних відповідей=</Caption>
+    <Font Name='MS Sans Serif' Color=150,100,50><Set Transparent=yes>;
+  [SetStepX] 30;
+  [Label4]<Font Name='MS Sans Serif' Color=150,100,50><Set Transparent=yes>;
+  [SetShowMark1]<Label1 ShowMark=true SystemMarking=12>
+    <Label2 ShowMark=true SystemMarking=5>
+    <Label3 ShowTrueCount=true>
+    <Label4 ShowFalseCount=true>;
+  [Align] Right;

@@ -1,0 +1,317 @@
+[Title Тест програми відображення сторінок]
+[SetMainPage MyPage] 
+[Page 1]
+
+  Текст сторінки 1.
+  Ось такий текст.
+  Кілька рядків.
+  [Label1] <font name='Times New Roman' size=12>
+  <Caption>Сторінка перша</Caption>;
+  [newline];
+  [Button1]<font name='Times New Roman' size=12 style=bold,italic>
+    <caption>До текстового поля на всю сторінку</caption>;
+  [DoOnButtonsPress1]<button1 showpage=3>;
+
+[Page 2]
+  [Label1] <font name='Bookman Old Style' size=12 color=0,0,100>
+  <caption>Сторінка друга</caption>;
+  [Button1] <font name='Times New Roman' size=14 style=bold,italic
+    color=255,255,255><caption>'На сторінку "MyPage"'</caption>;
+  [doonbuttonspressfirst] <button1 showpage='myPAGE'>;
+
+
+
+
+[Page 3]
+  [color] 100,150,200;
+  [RichEdit1] <font name='Times New Roman' size=12>
+    <set color=220,250,230 autosize=yes align=client>
+    <caption>
+    '<p align=center>А цей "RichEdit" має бути&br&<b><i>на всю сторінку!
+</i></b></p>'</caption>;
+
+
+
+
+[Page MyPage]
+  [ButtonOne] <caption>'Можете натискати'</caption><font name='Bookman Old Style'
+    style=underline size=18>; 
+  [DoOnbuttonspress1] <buttonOne showmessage='Зараз відкриється інша сторінка'
+    ShowPage='Сторінка'>;
+
+[page Сторінка]
+
+  Текст сторінки "Сторінка".
+Кілька рядочків...
+  [color] 0,128,200;
+  [ Button1 ] <Caption>('('Кнопка перша')')</caption> 
+    <font name='Times New Roman' size=12 Style=italic,underline>;
+  [newline];
+  [Button2] <caption> 'Кнопка (нижче). Тест апострофа: валер'янка.'</caption>
+    <font name='Monotype Corsiva' color=0,170,230 size=14>
+    <set flat=yes transparent=yes>;
+  [Label1] <caption>'Надпис.'</caption> <font name='Comic Sans MS' size=12 color=100,200,100>
+  <Set Transparent=no Color=200,50,170>;
+  [setx]30;
+  [SetY]150;
+  [buttonTheThird] <Caption> ('Ще кнопка. Більше/менше:&lt&&gt&&krkm& &rv&&amp&&krkm&&kdo&&kdc&')
+  </caption> <font style=bold><set flat=yes>;
+  [SetStepY]5;
+  [newline];
+  [Label2] <caption>'Прозорий надпис!' </caption><font name='Times New Roman'
+  style=italic,bold size=14 color=200,200,230><set Transparent=yes>;
+  [buttont1_1] <Caption>'&lt& &gt&'</caption><font name='Times New Roman' size=10>
+    <set transparent=yes>;
+  [newline];
+  [Label3] <caption>'Ще один надпис (перекреслений)'</caption><font name='Garamond'
+  size=20 color=255,255,255 style='StrikeOUT, italic'><set Transparent=yes>;
+  [Label31] <caption>'І не перекреслений'</caption><font name='Garamond' size=20
+  color= '255 , 255, 255' style=ITALIC>;
+  [NewLine];
+  [Labelt1] <caption>'Малим шрифтом'</caption>;
+  [newline];
+  [buttont2] <caption>'&kdo& &kdc&'</caption> <font name='Times New Roman' size=14>;
+  [Edit1] <caption> 'А це - поле для введення тексту!'</caption><font name='Bookman Old Style'
+  size=20 color=0,200,0><set color=0,0,100>;
+  [newline];
+  [Edit1_2] <caption>'Можна вводити:'</caption><font name='Times New Roman'
+  size=14 color=0,200,250 style=italic,bold><set color=0,100,200 size=400,0>;
+  [DoOnButtonsPress1] <button1 answer=true showpage='1'><button2 answer=false
+    showmessage='Не вірно'><ButtonTheThird answer=true showmessage='Правильно'
+    showpage='2' DisableThis=yes><buttont1_1 showpage='MyPage' DisableThis=true
+    DisableChecked=true>;
+  [newline];
+  [Memo1] <font name='Arial' style=italic size=14 color=0,150,255> <set color=0,0,0 size=50,50
+  autosize=yes>
+  <caption>
+  Тест компонента Memo (засоба для відображення тексту з багатьох рядків).&br&
+Це вже другий абзац.&br&А це вже третій.
+  </caption>;
+  [newline];
+  [richedit1] <font name='Times New Roman' color=0,0,200 size=14><set color=200,200,230
+  autosize=yes>
+  <caption>
+  'Цей текст має бути в RichEdit.&br&<font name='Courier New' color=0,255,0 style=bold size=12>
+Форматований.</font>&br&Текст.&br&
+<font name='Garamond' size=12 color=250,0,100 style=underline>  Форма</font>
+тований<font name='Times New Roman' size=15 style=italic,bold>!</font> і 
+<font color=255,0,0>різно</font><font color=0,255,0>кольо</font><font color=0,0,255>
+ровий</font><i>&br&Курсив.</i><b> Жирний.</b><i><b>Жирний</b> курсив</i>'</caption>;
+  [NewLine];
+  [RichEdit2] <font name='Courier New' size=12><set autosize=yes><caption>
+  '<font size=18><b>	Ніби заголовок	&br&</b></font>І решта тексту...
+<font name='Times New Roman' size=14 color=255,100,50><i><b>Треба доробити все!!!
+</b></i></font>'</caption>;
+  [RichEdit3]<font name='Courier New' color=0,0,200 size=5><set color=200,200,230 AutoSize=yes>
+  <caption>Тест довжини</caption>;
+  [RichEdit4]<font name='Times New Roman' size=14><set AutoSize=Yes>
+  <caption><font color=0,50,150>Тес</font><font color=0,100,200>т дов</font>
+<font color=0,170,255>жини</font></caption>;
+  [RichEdit5]<font name='Times New Roman' size=14><set autosize=yes>
+  <caption><i><b>Тест довжини</b></i></caption>;
+  [SetStepX]5;
+  [SetStepY]5;
+  [newline];
+  [RichEdit7]<font name='Bookman Old Style' size=12><set AutoSize=yes>
+  <caption>
+  '<p align=center leftindent=30 firstleft=30 rightindent=25 tab='50,100,110,115,130,150'>
+<Font Size=14>Справжній абзац</font></p>А це текст поза абзацом&br&І це також
+<p align=right>А це новий абзац.&br&Рядок 1&br&Рядок 2&br&Рядок 3</p>
+<p align=left FirstLeft=50 LeftIndent=10>Абзац з відступом першого рядка</p>
+<p align=center>Текст по центру</p>'
+  </caption>;
+  [align] left;
+[Page Ще_один_розділ]
+  [RichEdit1]<font name='Times New Roman' size=12 color=0,0,50>
+    <set autosize=yes align=top>
+    <caption>З правого боку&br&вгорі</caption>;
+  [newline];
+  [RichEdit2]<font name='Times New Roman' size=12>
+    <set autosize=yes align=bottom>
+    <caption>З правого боку&br&внизу</caption>;
+  [align] right;
+
+
+[Page  Ще хитріше оголошення сторінки  ]
+  [Label1_1]<font name='Times New Roman' size=12 color=0,150,200>
+  <set transparent=yes><caption>'За п'ятибальною системою'</caption>;
+  [newline];
+  [Label1]<font name='Bookman Old Style' size=30 color=250,100,200>
+    <set transparent=yes><caption>Є</caption>;
+  [newline];
+  [Label1_2]<font name='Times New Roman' size=12 color=0,150,200>
+  <set transparent=yes><caption>'За дванадцятибальною системою'</caption>;
+  [newline];
+  [Label2]<font name='Bookman Old Style' size=30 color=250,100,200>
+    <set transparent=yes><caption>тут</caption>;
+  [newline];
+  [Label3_1]<font name='FixedSys' color=0,150,255>
+    <caption>Кількість правильних відповідей=</caption>;
+  [Label3]<font name='FixedSys' color=0,150,255 style=bold>;
+  [newline];
+  [Label4_1]<font name='FixedSys' color=150,100,10>
+    <caption>Кількість неправильних відповідей=</caption>;
+  [Label4]<font name='FixedSys' color=150,100,10 style=bold>;
+  [SetShowMark1] <Label1 showMark=true SystemMarking=5>
+    <label2 ShowMark=true SystemMarking=12>
+    <label3 ShowTrueCount=true><label4 ShowFalseCount=true>;
+  [align] right;
+[page Перевірка введеного тексту]
+  [Label]<font name='Comic Sans MS' size=15 color=0,170,255 style=bold>
+    <set transparent=yes><caption>'Введіть назву міста'</caption>;
+  [Edit1] <set size=300,0 color=230,230,255>
+    <font name='Courier New' size=12>;
+  [Button1]<caption>Ok</caption><font name='MS Sans Serif' color=0,0,170>
+  <set Transparent=yes>;
+  [DoOnButtonsPress] <button1 Checked='edit1' checkText='Світловодськ'
+    checkCase=yes TrueMessage='Ви правильно відповіли:"%0:s".'
+    FalseMessage='Це написано в місті "%1:s", а "%0:s" - то щось інше.'
+    NumberMarks=5>;
+[page Тест RadioButton і CheckBox]
+  [label1]<caption>Під цим надписом має бути перемикач</caption>;
+  [newline];
+  [RadioButton1]<Caption>Позиція 1</Caption><Font name='Arial' size=12
+    color=0,0,255><Set Color=100,150,200>;
+  [newline];
+  [RadioButton2]<Caption>Позиція 2 (ще один RadoiButton)</Caption>
+    <Font name='Arial' size=12 style=bold color=0,0,255>
+    <set color=100,150,200>;
+  [newline];
+  [RadioButton3]<caption>Позиція 3</caption><font name='Comic Sans MS'
+    size=12 color=0,0,255><set AlignMENT=left color=100,150,200>;
+  [newline];
+  [Label2]<caption>А під цим текстом мають бути прапорці</caption>;
+  [newline];
+  [CheckBox1]<Caption>Перший прапорець</Caption><font name='Verdana'
+    size=12 color=0,255,0><set color=100,200,150 AlignMENT=right>;
+  [newline];
+  [CheckBox2]<Caption>Другий прапорець</Caption><font name='Verdana'
+    size=12 color=0,255,0><set color=100,200,150 alignment=left>;
+[page Тест груп кнопок]
+  [Label1]<caption>Під цим надписом мають бути кнопки-перемикачі</caption>;
+  [newline];
+  [Button1]<caption>Кнопка перша</caption><font name='Times New Roman'
+    style=bold,italic size=14 color=75,135,250>;
+  [newline];
+  [Button2]<caption>Кнопка друга</caption><font name='Times New Roman'
+    size=14 color=75,135,250>;
+  [newline];
+  [Button3]<caption>Кнопка третя</caption><font name='Arial' size=12>;
+  [newline];
+  [Label2]<caption>А під цим надписом ще одна група таких
+ перемикачів має бути</caption>;
+  [newline];
+  [Button4]<caption>Кнопка перша</caption><font name='Monotype Corsiva'
+    size=14 color=0,150,255>;
+  [newline];
+  [setstepx] 30;
+  [Button5]<caption>Кнопка друга</caption><font name='Monotype Corsiva'
+    size=14 color=0,150,255>;
+  [Button5_1]<caption>Кнопка четверта</caption><font name='Monotype Corsiva'
+    size=14 color=0,100,255>;
+  [setstepx] 5;
+  [newline];
+  [Button6]<caption>Кнопка третя</caption><font name='Monotype Corsiva'
+    size=14 color=0,150,255>;
+  [DoOnButtonsPress] <group radio=true><button1><button2><button3></group>
+    <group radio=true><button4><button5><button6><button5_1></group>;
+[page Тест інших функцій обробки подій об'єктів]
+  [Label1]<caption>При натисненні однієї кнопки мають затінятися всі</caption>;
+  [newline];
+  [Label2]<caption>(вся група кнопок)</caption>;[newline];
+  [Button1]<caption>Кнопка перша</caption>;
+  [newline];
+  [Button2]<caption>Конпка друга</caption><font color=255,0,0>;
+  [LabelExplain]<caption>Натисніть цю кнопку спершу</caption><font color=255,0,0>;
+  [newline];
+  [Button3]<caption>Кнопка третя</caption>;
+  [newline];
+  [Button4]<caption>Кнопка четверта</caption>;
+  [newline];
+  [Button5]<caption>'Кнопка п'ята'</caption>;
+  [newline];
+  [RadioButton1]<caption>А це вже не кнопка! Це перемикач.</caption>;
+  [newline];
+  [RadioButton2]<caption>Ну, а це ще один.</caption>;
+  [newline];
+  [Label3]<caption>Цей текст має також затінятися разом з кнопками</caption>;
+  [DoOnButtonsPress1]<group><button1 CanDisable=true DisableRest=true>
+    <button2 DisableThis=yes CanDisable=no><button3 candisable=true DisableRest=yes>
+    <button4 candisable=yes DisableRest=yes><button5 candisable=true DisableRest=yes>
+    <radioButton1 disablerest=true CanDisable=yes>
+    <RadioButton2 CanDisable=yes DisableRest=yes>
+    <Label3 CanDisable=yes></group>;
+  [newline];
+  [Label4]<caption>Вав! У "Label" також є подія "OnCklick"! Натисніть Мене!</caption>
+    <font style=bold color=0,255,0>;
+  [DoOnButtonsPress1]<label4 DisableThis=yes showpage='Продовження тесту функцій роботи з подіями об'єктів'>;
+[page Продовження тесту функцій роботи з подіями об'єктів]
+  [Label1]<caption>Введіть сюди слово "море" і двічі клацніть мишею по ньому</caption>;
+  [newline];
+  [Edit1]<set size=300,0>;
+  [DoOnButtonsPress1]<edit1 checked=edit1 checktext='море'
+    truemessage='Ви прапильно ввели слово &kdo&%0:s&kdc&'
+    falsemessage='Ви ввели слово невірно:&kdo&%0:s&kdc&'>;
+  [newline];
+  [Label2]<caption>Одні з цих Radiobutton - онів дають "правильну відповідь", інші - ні:</caption>;
+  [newline];
+  [RadioButton1]<Caption>Київ в Австралії</caption>;[newline];
+  [RadioButton2]<caption>Від Москви до Лондона тільки 5 сантиметрів</caption>;
+  [newline];
+  [RadioButton3]<caption>Афіни в Греції</caption><font color=0,255,0>;[newline];
+  [RadioButton4]<caption>Полтава в Карпатах</caption>;[newline];
+  [RadioButton5]<caption>Світловодськ біля Дніпра</caption><font color=0,255,0>;
+  [DoOnButtonsPress2]<group><radioButton1 answer=false disablethis=yes>
+    <RadioButton2 answer=false disablethis=yes>
+    <radiobutton3 answer=true disablethis=yes disablerest=yes>
+    <radiobutton4 answer=false disablethis=yes disablerest=yes>
+    <radiobutton5 answer=true disablethis=yes disablerest=yes></group>;
+[page Йдемо далі...]
+  [Label1]<caption>Це тест кнопки з малюнком:</caption>;
+  [newline];
+  [Button1]<caption>На цій кнопці має бути малюнок</caption>
+    <font color=0,0,255 style=bold><set transparent=yes
+      picture='TestPaint.bmp'>;[newline];
+  [Label2]<caption>А на цій кнопці має бути лише малюнок:</caption>;
+  [newline];
+  [Button2]<set transparent=yes Picture='TestPaint.bmp'>;
+  [newline];
+  [Label3]<caption>А ця кнопка з малюнком має затінятися:</caption>;
+  [newline];
+  [Button3]<caption>Натисни мене!</caption>
+    <font style=bold color=0,100,200><set transparent=yes
+      picture='TestPaint.bmp' TransparentPicture=yes>;
+  [DoOnButtonsPress1]<button3 disablethis=true>;
+  [newline];
+  [Label4]<caption>А це, можна вважати, власне малюнок:</caption>;
+  [newline];
+  [Button4]<set transparent=yes picture='TestPaint.bmp' TransparentPicture=no>;
+  [ButtonGo]<caption>Далі...</caption><font name='FixedSys' color=0,0,255>;
+  [DoOnButtonsPress2]<ButtonGo showpage='Йдемо далі...'>;
+[page Йдемо далі...]
+  [Label1]<Caption>Введіть слово "річка":</caption>;
+  [Memo1]<font name='FixedSys'>;
+  [DoOnButtonsPress1]<memo1 Checked='memo1' checktext='річка'
+    TrueMessage='' FalseMessage='Ви ввели слово неправильно:&kdo&%0:s&kdc&'
+    ShowPageOnTrue='Тест груп кнопок' ShowPageOnFalse='Тест RadioButton і CheckBox'>;
+  [newline];
+  [ButtonGo]<caption>Далі...</caption><font name='FixedSys' color=0,0,255>;
+  [DoOnButtonsPress2]<ButtonGo showpage='Йдемо далі...'>;
+[page Йдемо далі...]
+  [Label1]<caption>Під цим текстом має відображатися справжній малюнок</caption>;
+  [newline];
+  [Picture1]<set picture='TestPaint.bmp' transparent=yes>;
+  [Picture1_1]<set Picture='TestPaint.bmp' transparent=no>;
+  [newline];
+  [Label2]<caption>А тут має відображатися ще один малюнок</caption>;
+  [newline];
+  [Picture2]<set Picture='michiru.bmp' transparent=no>;
+  [ButtonGo]<caption>Далі...</caption><font name='FixedSys' color=0,0,255>;
+  [DoOnButtonsPress2]<ButtonGo showpage='Йдемо далі...'>;
+[page Йдемо далі...]
+  [Picture1]<set Picture='title.bmp' transparent=yes align=client>;
+  [DoOnButtonsPress1]<Picture1 showpage='Йдемо далі...'>;
+[page Йдемо далі...]
+  [ButtonGo]<caption>Далі...</caption><font name='FixedSys' color=0,0,255>
+  <set align=client>;
+  [DoOnButtonsPress1]<ButtonGo showpage='Йдемо далі...'>;
